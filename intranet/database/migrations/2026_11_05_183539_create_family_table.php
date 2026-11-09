@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('family', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('user_id')
+                ->primary()
+                ->constrained('users')
+                ->cascadeOnDelete();
+            $table->boolean('photo_consent')->default(false);
+            $table->boolean('whatsapp_consent')->default(false);
+            $table->boolean('data_consent')->default(false);
+            $table->string('address');
             $table->timestamps();
         });
     }

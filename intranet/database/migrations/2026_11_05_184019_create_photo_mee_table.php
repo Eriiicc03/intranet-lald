@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('photo_mee', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_photo');
+            $table->string('path');
+            $table->foreignId('id_meet')
+                ->constrained('meeting', 'id_meet')
+                ->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('publication', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_pub');
+            $table->string('author');
+            $table->year('year');
+            $table->string('url');
+            $table->string('journal')->nullable();
             $table->timestamps();
         });
     }
