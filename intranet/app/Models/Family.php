@@ -18,4 +18,8 @@ class Family extends Model
     {
         return $this->hasMany(patient::class);
     }
+    public function request(): BelongsTo
+    {
+        return $this->BelongsTo(request::class)
+    }
 }
