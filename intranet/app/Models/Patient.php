@@ -10,7 +10,7 @@ class Patient extends Model
 
     public function patient():BelongsTo
     {
-        return $this->BelongsTo(family::class)
+        return $this->BelongsTo(family::class);
     }
 }
 

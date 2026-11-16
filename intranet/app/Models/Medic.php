@@ -10,7 +10,7 @@ class Medic extends Model
 
     public function user():HasOne
     {
-        return $this->hasOne(medic::class)
+        return $this->hasOne(medic::class);
     }
 
 }

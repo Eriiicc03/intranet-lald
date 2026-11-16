@@ -31,11 +31,11 @@ class User extends Authenticatable
     }
     public function medic():HasOne
     {
-        return $this->hasOne(medic::class)
+        return $this->hasOne(medic::class);
     }
     public function family():HasOne
     {
-        return $this->hasOne(family::class)
+        return $this->hasOne(family::class);
     }
 
 }

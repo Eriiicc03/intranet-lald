@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Meeting extends Model
 {
     protected $table = "meeting";
+
+    public function photoMees(): HasMany {
+        return $this -> hasMany(PhotoMee::class);
+    }
 }
