@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Administrator;
 
 class AdministratorController extends Controller
 {
@@ -11,7 +12,13 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-        //
+        $administrators = Administrator::get();
+        return view(
+            'administrator.listaAdministrador',
+            [
+                'administrators' => $administrators
+            ]
+        );
     }
 
     /**
@@ -19,7 +26,7 @@ class AdministratorController extends Controller
      */
     public function create()
     {
-        //
+        return view('administrator.formAdministrator');
     }
 
     /**
@@ -27,7 +34,12 @@ class AdministratorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Administrator::create([
+            'user' => request('user'),
+            'password' => request('password')
+        ]);
+        // return redirect()->route('listaAdministrador');
     }
 
     /**
