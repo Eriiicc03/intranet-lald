@@ -29,7 +29,7 @@ Route::resource('patients', PatientController::class);
 Route::resource('services', ServiceController::class);
 Route::resource('meetings', MeetingController::class);
 Route::resource('presentations', PresentationController::class);
-Route::resource('publicactions', PublicationController::class);
+Route::resource('publications', PublicationController::class);
 Route::resource('photo-mees', PhotoMeeController::class);
 Route::resource('photo-pres', PhotoPreController::class);
 Route::resource('requests', RequestController::class);

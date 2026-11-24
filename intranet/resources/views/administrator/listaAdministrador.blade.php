@@ -10,7 +10,7 @@
     <tr>
         <td>{{$administrator->user}}</td>
         <td>{{$administrator->password}}</td>
-
+        <td><a href="{{ route('administrators.show', $administrator) }}">Info</a></td>
     </tr>
     @endforeach
     @stop

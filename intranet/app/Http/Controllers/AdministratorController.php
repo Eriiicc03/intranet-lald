@@ -39,16 +39,19 @@ class AdministratorController extends Controller
             'user' => request('user'),
             'password' => request('password')
         ]);
-        // return redirect()->route('listaAdministrador');
+        return redirect()->route('administrators.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Administrator $administrator)
     {
-        //
+        return view('administrator.showAdministrator', [
+            'administrator' => $administrator
+        ]);
     }
+    
 
     /**
      * Show the form for editing the specified resource.
