@@ -10,7 +10,13 @@
     <tr>
         <td>{{$administrator->user}}</td>
         <td>{{$administrator->password}}</td>
-
+        <td><a href="{{route('administrators.edit', $administrator)}}">Editar</a>
+            <form action="{{ route('administrators.destroy', $administrator) }}" method="POST"
+                onsubmit="return confirm('¿Seguro que quieres eliminar a {{ $administrator->user }}?')">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Eliminar</button>
+            </form>
     </tr>
     @endforeach
     @stop

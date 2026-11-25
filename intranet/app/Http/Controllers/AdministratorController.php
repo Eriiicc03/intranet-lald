@@ -53,9 +53,14 @@ class AdministratorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Administrator $administrator)
     {
-        //
+        return view(
+            "administrator.editAdministrator",
+            [
+                'administrator' => $administrator
+            ]
+        );
     }
 
     /**
@@ -69,8 +74,12 @@ class AdministratorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Administrator $administrator)
     {
-        //
+        $administrator->delete();
+
+        return redirect()
+            ->route('administrators.index')
+            ->with('success', 'Administrador eliminado correctamente');
     }
 }
