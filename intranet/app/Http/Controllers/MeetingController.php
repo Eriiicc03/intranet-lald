@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Meeting;
 
 class MeetingController extends Controller
 {
@@ -11,7 +12,13 @@ class MeetingController extends Controller
      */
     public function index()
     {
-        //
+        $meetings = Meeting::get();
+        return view(
+            'meeting.listMeeting',
+            [
+                'meetings' => $meetings
+            ]
+        );
     }
 
     /**
